@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swastik Printers - Professional Printing Services</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --highlight-color: #f39c12;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --header-bg: #ffffff;
+            --footer-bg: #2c3e50;
+            --gradient-1: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            --gradient-2: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
+            --gradient-3: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+        
+        /* Enhanced Header */
+        .main-header {
+            background: var(--gradient-3);
+            color: white;
+            padding: 150px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .main-header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+        
+        .header-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Navigation Bar */
+        .main-navbar {
+            background: var(--gradient-1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            position: relative;
+        }
+        
+        .nav-logo-icon:before, .nav-logo-icon:after {
+            content: "";
+            position: absolute;
+            background-color: var(--primary-color);
+        }
+        
+        .nav-logo-icon:before {
+            width: 30px;
+            height: 8px;
+            top: 16px;
+            left: 5px;
+        }
+        
+        .nav-logo-icon:after {
+            width: 8px;
+            height: 30px;
+            top: 5px;
+            left: 16px;
+        }
+        
+        .nav-logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: white !important;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--highlight-color);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        /* Main Logo */
+        .main-logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            perspective: 1000px;
+        }
+        
+        .main-swastik-logo {
+            width: 150px;
+            height: 150px;
+            background: white;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transform-style: preserve-3d;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+            animation: logoFloat 6s ease-in-out infinite;
+            border: 5px solid var(--accent-color);
+        }
+        
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .main-swastik-symbol {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: translateZ(40px);
+        }
+        
+        .main-swastik-symbol:before, .main-swastik-symbol:after {
+            content: "";
+            position: absolute;
+            background-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(44, 62, 80, 0.5);
+            border-radius: 5px;
+        }
+        
+        .main-swastik-symbol:before {
+            width: 80px;
+            height: 25px;
+            top: 38px;
+            left: 10px;
+        }
+        
+        .main-swastik-symbol:after {
+            width: 25px;
+            height: 80px;
+            top: 10px;
+            left: 38px;
+        }
+        
+        .main-logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 3.5rem;
+            color: white;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            letter-spacing: 2px;
+            margin-left: 20px;
+        }
+        
+        /* Stats Counter */
+        .stats-section {
+            padding: 80px 0;
+            background: var(--gradient-2);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            z-index: 1;
+            position: relative;
+        }
+        
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .stat-text {
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Design Services */
+        .design-services {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+        
+        .design-title {
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 50px;
+            text-align: center;
+            font-size: 3rem;
+        }
+        
+        .design-title:after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .design-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .design-card:hover {
+            transform: translateY(-20px) rotateX(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .design-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .design-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .design-card:hover .design-img img {
+            transform: scale(1.1);
+        }
+        
+        .design-content {
+            padding: 30px;
+        }
+        
+        .design-name {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .design-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .design-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .design-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .design-features li i {
+            color: var(--accent-color);
+            margin-right: 10px;
+        }
+        
+        /* Poster Design Specific */
+        .poster-design {
+            border-top: 5px solid var(--accent-color);
+        }
+        
+        /* Banner Design Specific */
+        .banner-design {
+            border-top: 5px solid var(--secondary-color);
+        }
+        
+        /* Notebook Design Specific */
+        .notebook-design {
+            border-top: 5px solid var(--highlight-color);
+        }
+        
+        /* Owner Section */
+        .owner-section {
+            padding: 100px 0;
+            background: var(--gradient-3);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .owner-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+        
+        .owner-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .owner-name {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .owner-title {
+            font-size: 1.2rem;
+            color: var(--highlight-color);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .owner-contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        /* Why Choose Us */
+        .why-choose-section {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+        
+        .why-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .why-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .why-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient-2);
+        }
+        
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .why-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--gradient-1);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+        
+        .contact-title {
+            color: white;
+            margin-bottom: 50px;
+            text-align: center;
+            font-size: 3rem;
+        }
+        
+        .contact-form-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-info {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--footer-bg);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo-icon {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            position: relative;
+        }
+        
+        .footer-logo-icon:before, .footer-logo-icon:after {
+            content: "";
+            position: absolute;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-logo-icon:before {
+            width: 40px;
+            height: 10px;
+            top: 25px;
+            left: 10px;
+        }
+        
+        .footer-logo-icon:after {
+            width: 10px;
+            height: 40px;
+            top: 10px;
+            left: 25px;
+        }
+        
+        .footer-logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2.5rem;
+            }
+            
+            .main-logo-text {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+            }
+            
+            .design-title {
+                font-size: 2.5rem;
+            }
+            
+            .owner-name {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg main-navbar">
+        <div class="container">
+            <div class="nav-logo">
+                <div class="nav-logo-icon"></div>
+                <span class="nav-logo-text">SWASTIK PRINTERS</span>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#designs">Design Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#owner">Our Owner</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#why-us">Why Choose Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Header -->
+    <header class="main-header" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="main-logo-container">
+                        <div class="main-swastik-logo">
+                            <div class="main-swastik-symbol"></div>
+                        </div>
+                        <h1 class="main-logo-text">SWASTIK PRINTERS</h1>
+                    </div>
+                    <p class="logo-tagline" style="color: white; text-align: center; font-size: 1.2rem; margin-bottom: 30px;">Professional Printing & Design Solutions</p>
+                    
+                    <h1 class="header-title animate__animated animate__fadeInDown">Premium Printing Services</h1>
+                    <p class="header-subtitle animate__animated animate__fadeInUp">High-quality printing with creative designs, reasonable rates, and timely delivery in Bharuch, Gujarat.</p>
+                    
+                    <div class="d-flex flex-wrap gap-3 animate__animated animate__fadeInUp animate__delay-1s">
+                        <a href="#contact" class="btn btn-lg me-3" style="background: var(--gradient-2); color: white; border: none; padding: 15px 40px; font-weight: 600;">Get Quote Now</a>
+                        <a href="tel:9924778078" class="btn btn-outline-light btn-lg"><i class="fas fa-phone me-2"></i>Call Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                    <div class="position-relative">
+                        <div class="main-swastik-logo" style="width: 250px; height: 250px; margin: 0 auto;">
+                            <div class="main-swastik-symbol" style="width: 170px; height: 170px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-sm-6 stat-item">
+                    <div class="stat-number" id="projectCount">0</div>
+                    <div class="stat-text">Projects Completed</div>
+                </div>
+                <div class="col-md-3 col-sm-6 stat-item">
+                    <div class="stat-number" id="happyCustomerCount">0</div>
+                    <div class="stat-text">Happy Customers</div>
+                </div>
+                <div class="col-md-3 col-sm-6 stat-item">
+                    <div class="stat-number" id="yearsCount">0</div>
+                    <div class="stat-text">Years Experience</div>
+                </div>
+                <div class="col-md-3 col-sm-6 stat-item">
+                    <div class="stat-number" id="designCount">0</div>
+                    <div class="stat-text">Designs Created</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Services -->
+    <section class="design-services" id="designs">
+        <div class="container">
+            <h2 class="design-title">Specialized Design Services</h2>
+            <div class="row">
+                <!-- Poster Design -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="design-card poster-design animate-on-scroll">
+                        <div class="design-img">
+                            <img src="https://images.unsplash.com/photo-1565689221359-d87f85d4aee2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Poster Design">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <span class="badge bg-accent" style="background-color: var(--accent-color); font-size: 1rem; padding: 10px 20px;">POSTER DESIGN</span>
+                            </div>
+                        </div>
+                        <div class="design-content">
+                            <h3 class="design-name">Poster Design Services</h3>
+                            <p>Eye-catching and professional poster designs for events, promotions, advertisements, and more.</p>
+                            <ul class="design-features">
+                                <li><i class="fas fa-check"></i> Event Posters</li>
+                                <li><i class="fas fa-check"></i> Movie & Show Posters</li>
+                                <li><i class="fas fa-check"></i> Promotional Posters</li>
+                                <li><i class="fas fa-check"></i> Educational Posters</li>
+                                <li><i class="fas fa-check"></i> Custom Size Posters</li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <a href="#contact" class="btn" style="background-color: var(--accent-color); color: white;">Get Poster Design</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Banner Design -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="design-card banner-design animate-on-scroll">
+                        <div class="design-img">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Banner Design">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <span class="badge" style="background-color: var(--secondary-color); font-size: 1rem; padding: 10px 20px;">BANNER DESIGN</span>
+                            </div>
+                        </div>
+                        <div class="design-content">
+                            <h3 class="design-name">Banner Design Services</h3>
+                            <p>Professional banner designs for outdoor advertising, events, exhibitions, and business promotions.</p>
+                            <ul class="design-features">
+                                <li><i class="fas fa-check"></i> Flex & Vinyl Banners</li>
+                                <li><i class="fas fa-check"></i> Outdoor Advertising Banners</li>
+                                <li><i class="fas fa-check"></i> Exhibition & Event Banners</li>
+                                <li><i class="fas fa-check"></i> Business Promotion Banners</li>
+                                <li><i class="fas fa-check"></i> Custom Banner Sizes</li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <a href="#contact" class="btn" style="background-color: var(--secondary-color); color: white;">Get Banner Design</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Notebook Design -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="design-card notebook-design animate-on-scroll">
+                        <div class="design-img">
+                            <img src="https://images.unsplash.com/photo-1531346688376-ab6275c4725e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Notebook Design">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <span class="badge" style="background-color: var(--highlight-color); font-size: 1rem; padding: 10px 20px;">NOTEBOOK DESIGN</span>
+                            </div>
+                        </div>
+                        <div class="design-content">
+                            <h3 class="design-name">Notebook Design Services</h3>
+                            <p>Custom notebook designs for schools, colleges, businesses, and personal use with premium quality.</p>
+                            <ul class="design-features">
+                                <li><i class="fas fa-check"></i> School & College Notebooks</li>
+                                <li><i class="fas fa-check"></i> Corporate Notebooks</li>
+                                <li><i class="fas fa-check"></i> Personal Diary Design</li>
+                                <li><i class="fas fa-check"></i> Custom Cover Designs</li>
+                                <li><i class="fas fa-check"></i> Premium Paper Quality</li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <a href="#contact" class="btn" style="background-color: var(--highlight-color); color: white;">Get Notebook Design</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Owner Section -->
+    <section class="owner-section" id="owner">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: white; font-size: 3rem;">Meet Our Founder</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="owner-card">
+                        <h2 class="owner-name">Harshad Patel</h2>
+                        <div class="owner-title">Founder & Owner - Swastik Printers</div>
+                        <p>With over 15 years of dedicated experience in the printing industry, Harshad Patel has established Swastik Printers as Bharuch's most trusted and reliable printing service provider. His vision of combining quality craftsmanship with exceptional customer service has made Swastik Printers the go-to choice for businesses and individuals alike.</p>
+                        <p>Under his leadership, Swastik Printers has successfully completed 500+ projects and served 500+ happy customers with excellence. Harshad personally oversees every design and printing project to ensure the highest standards are met.</p>
+                        
+                        <div class="owner-contact">
+                            <a href="tel:9924778078" class="btn" style="background: var(--gradient-2); color: white;"><i class="fas fa-phone me-2"></i>99247 78078</a>
+                            <a href="tel:8200756041" class="btn" style="background: var(--gradient-1); color: white;"><i class="fas fa-phone me-2"></i>82007 56041</a>
+                            <a href="mailto:info@swastikprinters.com" class="btn btn-outline-light"><i class="fas fa-envelope me-2"></i>Email Owner</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-section" id="why-us">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--primary-color); font-size: 3rem;">Why Choose Swastik Printers?</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-card animate-on-scroll">
+                        <div class="why-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3 class="why-title">500+ Projects Completed</h3>
+                        <p>We have successfully delivered over 500 printing projects with 100% client satisfaction. Our experience speaks for itself.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-card animate-on-scroll">
+                        <div class="why-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <h3 class="why-title">500+ Happy Customers</h3>
+                        <p>Join our family of satisfied clients who trust us for all their printing needs. Customer happiness is our top priority.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-card animate-on-scroll">
+                        <div class="why-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="why-title">Fast Turnaround</h3>
+                        <p>We understand deadlines and guarantee timely delivery for all projects without compromising on quality.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-card animate-on-scroll">
+                        <div class="why-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3 class="why-title">Creative Design Team</h3>
+                        <p>Our expert designers create stunning visuals for posters, banners, notebooks, and all printing materials.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-card animate-on-scroll">
+                        <div class="why-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <h3 class="why-title">Reasonable Rates</h3>
+                        <p>We offer the most competitive pricing in Bharuch without compromising on the quality of our printing services.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-card animate-on-scroll">
+                        <div class="why-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="why-title">Customer Support</h3>
+                        <p>We provide dedicated support throughout your project, from design consultation to final delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="contact-title">Contact Us Today</h2>
+            <div class="row">
+                <div class="col-lg-7 mb-4 mb-lg-0">
+                    <div class="contact-form-container">
+                        <h3 class="mb-4" style="color: white;">Get a Free Quote</h3>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name" required style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white;">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="tel" class="form-control" placeholder="Phone Number" required style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white;">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Email Address" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white;">
+                            </div>
+                            <div class="mb-3">
+                                <select class="form-select" required style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white;">
+                                    <option value="">Select Service</option>
+                                    <option value="Poster Design">Poster Design</option>
+                                    <option value="Banner Design">Banner Design</option>
+                                    <option value="Notebook Design">Notebook Design</option>
+                                    <option value="Invitation Cards">Invitation Cards</option>
+                                    <option value="Kankotri Design">Kankotri Design</option>
+                                    <option value="Bill Books">Bill Books</option>
+                                    <option value="Visiting Cards">Visiting Cards</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Message / Requirements" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white;"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-lg w-100" style="background: var(--gradient-2); color: white; border: none;">Submit Request</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="contact-info">
+                        <h3 class="mb-4" style="color: white;">Our Contact Details</h3>
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="contact-icon me-3" style="width: 40px; height: 40px; background-color: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5 style="color: white;">Address</h5>
+                                <p>Supar Market, Station Road,<br>Panch Batti, Bharuch – 392001,<br>Gujarat, India</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="contact-icon me-3" style="width: 40px; height: 40px; background-color: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5 style="color: white;">Phone Numbers</h5>
+                                <p><a href="tel:9924778078" style="color: white; text-decoration: none;">99247 78078</a></p>
+                                <p><a href="tel:8200756041" style="color: white; text-decoration: none;">82007 56041</a></p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="contact-icon me-3" style="width: 40px; height: 40px; background-color: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5 style="color: white;">Email</h5>
+                                <p><a href="mailto:info@swastikprinters.com" style="color: white; text-decoration: none;">info@swastikprinters.com</a></p>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <h5 style="color: white;">Business Hours</h5>
+                            <p>Monday - Saturday: 9:00 AM - 8:00 PM<br>Sunday: 10:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon"></div>
+                        <div class="footer-logo-text">SWASTIK PRINTERS</div>
+                    </div>
+                    <p class="mt-3">Your trusted partner for all printing and design needs in Bharuch, Gujarat. We deliver quality, creativity, and reliability in every project.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-white"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-whatsapp fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="mb-4" style="color: white;">Our Services</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#designs" class="text-light text-decoration-none">Poster Design</a></li>
+                        <li class="mb-2"><a href="#designs" class="text-light text-decoration-none">Banner Design</a></li>
+                        <li class="mb-2"><a href="#designs" class="text-light text-decoration-none">Notebook Design</a></li>
+                        <li class="mb-2"><a href="#designs" class="text-light text-decoration-none">Invitation Cards</a></li>
+                        <li class="mb-2"><a href="#designs" class="text-light text-decoration-none">Kankotri Design</a></li>
+                        <li class="mb-2"><a href="#designs" class="text-light text-decoration-none">Bill Books</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="mb-4" style="color: white;">Our Achievements</h4>
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <div class="text-center p-3" style="background: rgba(255,255,255,0.1); border-radius: 10px;">
+                                <h3 class="mb-0" style="color: var(--accent-color);">500+</h3>
+                                <p class="mb-0 small">Projects</p>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <div class="text-center p-3" style="background: rgba(255,255,255,0.1); border-radius: 10px;">
+                                <h3 class="mb-0" style="color: var(--accent-color);">500+</h3>
+                                <p class="mb-0 small">Happy Customers</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="text-center p-3" style="background: rgba(255,255,255,0.1); border-radius: 10px;">
+                                <h3 class="mb-0" style="color: var(--accent-color);">15+</h3>
+                                <p class="mb-0 small">Years Experience</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="text-center p-3" style="background: rgba(255,255,255,0.1); border-radius: 10px;">
+                                <h3 class="mb-0" style="color: var(--accent-color);">1000+</h3>
+                                <p class="mb-0 small">Designs Created</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> Swastik Printers. All rights reserved. | Designed and Developed by <strong style="color: var(--accent-color);">Utkarsh Patel</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Set current year in copyright
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Animated Counter
+        function animateCounter(elementId, targetValue, duration = 2000) {
+            const element = document.getElementById(elementId);
+            const startValue = 0;
+            const increment = targetValue / (duration / 16); // 60fps
+            
+            let currentValue = startValue;
+            
+            const timer = setInterval(() => {
+                currentValue += increment;
+                if (currentValue >= targetValue) {
+                    currentValue = targetValue;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(currentValue);
+            }, 16);
+        }
+        
+        // Start counters when in view
+        let countersAnimated = false;
+        
+        function checkCountersInView() {
+            const statsSection = document.getElementById('stats');
+            const rect = statsSection.getBoundingClientRect();
+            
+            if (rect.top <= window.innerHeight && rect.bottom >= 0 && !countersAnimated) {
+                animateCounter('projectCount', 500);
+                animateCounter('happyCustomerCount', 500);
+                animateCounter('yearsCount', 15);
+                animateCounter('designCount', 1000);
+                countersAnimated = true;
+            }
+        }
+        
+        // Scroll animation for elements
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                const isInView = rect.top <= window.innerHeight && rect.bottom >= 0;
+                
+                if (isInView) {
+                    element.classList.add('animated');
+                }
+            });
+            
+            checkCountersInView();
+        }
+        
+        // Initial check
+        animateOnScroll();
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            alert('Thank you for your inquiry! We will contact you shortly.');
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.main-navbar');
+            if (window.scrollY > 100) {
+                navbar.style.padding = '10px 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                navbar.style.padding = '15px 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.2)';
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
